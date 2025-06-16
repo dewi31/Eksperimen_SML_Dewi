@@ -39,6 +39,6 @@ def preprocess_and_save(input_csv_path, output_csv_path, scaler_path):
 if __name__ == "__main__":
     preprocess_and_save(
         input_csv_path='./loan_approval_dataset.csv',
-        output_csv_path='preprocessing/loan__approval_preprocessing/loan_preprocessing.csv',
-        scaler_path='preprocessing/loan__approval_preprocessing/scaler_model.joblib'
+        output_csv_path='preprocessing/loan_preprocessing.csv',
+        scaler_path='preprocessing/scaler_model.joblib'
     )
