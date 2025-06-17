@@ -1,11 +1,15 @@
 name: preprocessing
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - ./loan_approval_dataset.csv
-      - preprocessing/automate_Dewi.py
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+    CSV_URL: "./loan_approval_dataset.csv"
 
 jobs:
   preprocess:
