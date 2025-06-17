@@ -1,6 +1,5 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-import joblib
 
 def preprocess_and_save(input_csv_path, output_csv_path, scaler_path):
     # Load data
@@ -30,15 +29,9 @@ def preprocess_and_save(input_csv_path, output_csv_path, scaler_path):
     # Menyimpan hasil ke CSV
     df.to_csv(output_csv_path, index=False)
 
-    # Menyimpan scaler ke file .joblib
-    joblib.dump(scaler, scaler_path)
-
-    print("Preprocessing selesai. Data disimpan di:", output_csv_path)
-    print("Scaler disimpan di:", scaler_path)
 
 if __name__ == "__main__":
     preprocess_and_save(
         input_csv_path='./loan_approval_dataset.csv',
         output_csv_path='preprocessing/loan_preprocessing.csv',
-        scaler_path='preprocessing/scaler_model.joblib'
     )
